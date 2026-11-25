@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A secure password generator built with six JavaScript characters.">
+  <title>PassFuck — unnecessarily complicated passwords</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="masthead">
+      <a class="wordmark" href="./" aria-label="PassFuck home">PASS<span>FUCK</span><span class="wordmark-star">✳</span></a>
+      <span class="masthead-meta">A VERY SERIOUS PASSWORD TOOL <span class="edition">/ EST. 2026</span></span>
+    </header>
+
+    <main>
+      <div class="intro-label"><span class="label-square"></span> TOOL NO. 001 <span class="label-rule"></span> SECURITY / ABSURDITY</div>
+      <div class="headline-grid">
+        <div>
+          <h1>Strong passwords.<br><em>Terrible</em> source code.</h1>
+          <p class="lede">A genuinely secure password generator, built with JavaScript written in six characters. The passwords make sense. The code does not.</p>
+        </div>
+        <div class="glyph" aria-hidden="true">[]<br>()<br>!+</div>
+      </div>
+
+      <section class="workbench" aria-labelledby="generator-title">
+        <div class="section-heading"><span>01 / THE GENERATOR</span><h2 id="generator-title">Make a password</h2></div>
+
+        <div class="password-block">
+          <div class="field-label"><span>YOUR NEW PASSWORD</span><span class="field-note">GENERATED ON THIS DEVICE</span></div>
+          <div class="password-row"><output id="password-output" aria-live="polite"></output><button class="copy-button" id="copy-password" type="button" aria-label="Copy password">COPY <span aria-hidden="true">↗</span></button></div>
+        </div>
+
+        <div class="controls-grid">
+          <div class="length-control">
+            <label for="length-slider">LENGTH <span>8—128 CHARACTERS</span></label>
+            <div class="length-row"><input id="length-slider" type="range" min="8" max="128" value="20"><input id="length-input" type="number" min="8" max="128" value="20" inputmode="numeric" aria-label="Password length"></div>
+          </div>
+          <fieldset class="character-control">
+            <legend>INCLUDE CHARACTERS</legend>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="group" value="upper" checked><span>Uppercase</span><b>A–Z</b></label>
+              <label><input type="checkbox" name="group" value="lower" checked><span>Lowercase</span><b>a–z</b></label>
+              <label><input type="checkbox" name="group" value="numbers" checked><span>Numbers</span><b>0–9</b></label>
+              <label><input type="checkbox" name="group" value="symbols" checked><span>Symbols</span><b>!@#</b></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="actions"><button id="generate" class="primary-button" type="button">GENERATE PASSWORD <span aria-hidden="true">↗</span></button><button id="curse" class="text-button" type="button">GENERATE CURSED PASSWORD <span aria-hidden="true">→</span></button></div>
+        <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section id="cursed-panel" class="cursed-panel" aria-labelledby="cursed-title" hidden>
+        <div class="cursed-heading"><div><span class="eyebrow">02 / THE UNNECESSARY PART</span><h2 id="cursed-title">Your password, but worse.</h2></div><span id="cursed-count" class="cursed-count">0 characters</span></div>
+        <p>This JSFuck expression evaluates to the password above. It is the same secret in a much longer disguise.</p>
+        <div class="code-wrap"><code id="cursed-output"></code></div>
+        <button id="copy-cursed" class="copy-cursed" type="button">COPY THE CURSE <span aria-hidden="true">↗</span></button>
+      </section>
+    </main>
+
+    <footer><span>BUILT WITH JAVASCRIPT. ALL SIX CHARACTERS OF IT.</span><a href="https://github.com/11lunaric11/passfuck">SOURCE CODE ↗</a></footer>
+  </div>
+</body>
+</html>
